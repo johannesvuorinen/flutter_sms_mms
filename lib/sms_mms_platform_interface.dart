@@ -23,7 +23,7 @@ abstract class SmsMmsPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> sendMms({required List<String> phones, String? filePath, String type, required String text}) {
+  Future<void> sendMms({required List<String> phones, String? filePath, String type = "image", required String text}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }
