@@ -11,7 +11,7 @@ class MethodChannelSmsMms extends SmsMmsPlatform {
 
   @override
   Future<void> sendMms(
-      {required List<String> phones, String? filePath, String type, required String text}) async {
+      {required List<String> phones, String? filePath, String type = "image", required String text}) async {
     await methodChannel.invokeMethod('sendMms', {
       'path' : filePath,
       'type' : type,
