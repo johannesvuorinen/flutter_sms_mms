@@ -5,7 +5,7 @@ class SmsMms {
   static Future<void> send({
     required List<String> recipients,
     String? filePath,
-    String type,
+    String type = "image",
     required String message,
   }) async {
     return SmsMmsPlatform.instance.sendMms(
