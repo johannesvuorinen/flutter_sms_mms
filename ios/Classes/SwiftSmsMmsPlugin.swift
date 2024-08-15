@@ -32,7 +32,11 @@ public class SwiftSmsMmsPlugin: NSObject, FlutterPlugin, UINavigationControllerD
                 do {
                     
                     if _arguments["path"] != nil {
-                        try controller.addAttachmentData(NSData(contentsOfFile:  _arguments["path"] as? String ?? "") as Data, typeIdentifier: "public.image", filename: "attachment.jpeg")
+						if _arguments["type"] as? String == "image" {
+							try controller.addAttachmentData(NSData(contentsOfFile:  _arguments["path"] as? String ?? "") as Data, typeIdentifier: "public.image", filename: "attachment.jpeg")
+						} else {
+							try controller.addAttachmentData(NSData(contentsOfFile:  _arguments["path"] as? String ?? "") as Data, typeIdentifier: "public.movie", filename: "attachment.mp4")
+						}
                     }
                 } catch {
                     
